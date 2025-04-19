@@ -38,6 +38,10 @@ img {
   display: block;
 }
 
+* {
+  font-family: Poppins;
+}
+
 body {
   color: blue;
 }/*# sourceMappingURL=style.css.map */
