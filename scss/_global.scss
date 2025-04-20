@@ -47,3 +47,11 @@ img {
 .svg-sprite {
 	display: none;
 }
+
+.subtitle {
+	color: $main-color;
+	font-size: 14px;
+	font-style: normal;
+	font-weight: 600;
+	text-transform: uppercase;
+}

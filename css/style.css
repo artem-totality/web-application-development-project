@@ -50,6 +50,14 @@ img {
   display: none;
 }
 
+.subtitle {
+  color: #32aa27;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
 .header {
   border-bottom: 2px solid #32aa27;
 }
@@ -90,6 +98,7 @@ img {
 
 .contacts__card {
   border: 2px solid #32aa27;
+  background-color: rgb(245, 245, 245);
   border-radius: 8px;
 }
 .contacts__title {
