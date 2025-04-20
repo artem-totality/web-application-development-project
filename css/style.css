@@ -110,6 +110,9 @@ img {
 .promo__inner {
   color: #ffffff;
 }
+.promo__header-wrapper {
+  min-height: 150px;
+}
 .promo__header {
   font-size: 62px;
   font-style: normal;

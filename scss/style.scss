@@ -57,6 +57,10 @@
 	&__inner {
 		color: $inverted-color;
 	}
+
+	&__header-wrapper {
+		min-height: 150px;
+	}
 	&__header {
 		font-size: 62px;
 		font-style: normal;
