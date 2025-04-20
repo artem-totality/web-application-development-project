@@ -39,6 +39,37 @@
 	}
 }
 
+//---  index start ---//
+.promo {
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+	background-color: $background-color;
+	&--1 {
+		background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.5)), url('../images/carousel-1.jpeg');
+	}
+	&--2 {
+		background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.5)), url('../images/carousel-2.jpeg');
+	}
+	&--3 {
+		background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.5)), url('../images/carousel-3.jpeg');
+	}
+	&__inner {
+		color: $inverted-color;
+	}
+	&__header {
+		font-size: 62px;
+		font-style: normal;
+		font-weight: 700;
+	}
+	&__button {
+		font-weight: 600;
+		text-transform: uppercase;
+		background-color: $main-color;
+	}
+}
+//---  index end ---//
+
 //---  contacts start ---//
 .contacts {
 	&__card {

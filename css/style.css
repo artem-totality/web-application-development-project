@@ -92,6 +92,35 @@ img {
   vertical-align: -35%;
 }
 
+.promo {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-color: rgb(245, 245, 245);
+}
+.promo--1 {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.5)), url("../images/carousel-1.jpeg");
+}
+.promo--2 {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.5)), url("../images/carousel-2.jpeg");
+}
+.promo--3 {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.5)), url("../images/carousel-3.jpeg");
+}
+.promo__inner {
+  color: #ffffff;
+}
+.promo__header {
+  font-size: 62px;
+  font-style: normal;
+  font-weight: 700;
+}
+.promo__button {
+  font-weight: 600;
+  text-transform: uppercase;
+  background-color: #32aa27;
+}
+
 .contacts__card {
   border: 2px solid #32aa27;
   background-color: rgb(245, 245, 245);
