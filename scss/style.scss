@@ -1,6 +1,26 @@
 @import 'variables';
 @import 'global';
 
-body {
-	color: blue;
+.footer {
+	border-top: 2px solid $main-color;
+	color: white;
+	background-color: black;
+	&__inner {
+		gap: 0 5px;
+		line-height: 36px;
+		text-align: center;
+	}
+}
+
+.copyrights {
+	&__link {
+		span {
+			border-bottom: 1px solid white;
+		}
+		svg {
+			width: 32px;
+			height: 32px;
+			vertical-align: -35%;
+		}
+	}
 }

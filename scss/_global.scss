@@ -40,6 +40,10 @@ img {
 	display: block;
 }
 
-* {
-	font-family: Poppins;
+.app-wrapper {
+	min-height: 100vh;
+}
+
+.svg-sprite {
+	display: none;
 }
