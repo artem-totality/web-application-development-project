@@ -1,6 +1,10 @@
 @import 'variables';
 @import 'global';
 
+.header {
+	border-bottom: 2px solid $main-color;
+}
+
 .footer {
 	border-top: 2px solid $main-color;
 	color: white;

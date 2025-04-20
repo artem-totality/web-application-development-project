@@ -50,6 +50,10 @@ img {
   display: none;
 }
 
+.header {
+  border-bottom: 2px solid #32aa27;
+}
+
 .footer {
   border-top: 2px solid #32aa27;
   color: white;
