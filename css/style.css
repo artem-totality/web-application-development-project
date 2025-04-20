@@ -99,13 +99,13 @@ img {
   background-color: rgb(245, 245, 245);
 }
 .promo--1 {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.5)), url("../images/carousel-1.jpeg");
+  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("../images/carousel-1.jpeg");
 }
 .promo--2 {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.5)), url("../images/carousel-2.jpeg");
+  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("../images/carousel-2.jpeg");
 }
 .promo--3 {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.5)), url("../images/carousel-3.jpeg");
+  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("../images/carousel-3.jpeg");
 }
 .promo__inner {
   color: #ffffff;
