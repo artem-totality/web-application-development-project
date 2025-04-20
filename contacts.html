@@ -50,14 +50,14 @@
 									<div class="collapse navbar-collapse flex-grow-0" id="navbarSupportedContent">
 										<ul class="navbar-nav me-auto mb-2 mb-lg-0">
 											<li class="nav-item">
-												<a class="nav-link active" aria-current="page" href="/">Home</a>
+												<a class="nav-link" aria-current="page" href="/">Home</a>
 											</li>
 
 											<li class="nav-item">
 												<a class="nav-link" href="./products.html">Products</a>
 											</li>
 											<li class="nav-item">
-												<a class="nav-link" href="./contacts.html">Contacts</a>
+												<a class="nav-link active" href="./contacts.html">Contacts</a>
 											</li>
 											<li class="nav-item">
 												<a class="nav-link" href="./about.html">About</a>
@@ -70,7 +70,51 @@
 					</div>
 				</div>
 			</header>
-			<div class="flex-grow-1 content"></div>
+			<div class="flex-grow-1 content">
+				<section class="contacts">
+					<div class="container">
+						<div class="py-5 mb-5 contacts__inner">
+							<div class="h2 py-3 contacts__title">Contacts</div>
+							<div class="h5 py-3 mb-3 contacts__info">
+								Website development, I create sites that have their own style and soul
+							</div>
+							<div class="contacts__box">
+								<div class="p-4 contacts__card">
+									<div class="contacts__box-inner">
+										<a href="tel:+353851928864" class="mb-3 contacts__link">
+											<svg>
+												<use href="#phoneSvg" />
+											</svg>
+											<span>+353-85-192-88-64 (Ireland)</span>
+										</a>
+										<br />
+										<a href="tel:+380500824350" class="mb-3 contacts__link">
+											<svg>
+												<use href="#phoneSvg" />
+											</svg>
+											<span>+38-050-08-24-350</span>
+										</a>
+										<br />
+										<a href="https://t.me/totality7" class="mb-3 contacts__link" target="_blank">
+											<svg>
+												<use href="#telegramSvg" />
+											</svg>
+											<span>@totality7</span>
+										</a>
+										<br />
+										<a href="mailto:artem.totality@gmail.com" class="contacts__link contacts__link--mail">
+											<svg>
+												<use href="#mailSvg" />
+											</svg>
+											<span>artem.totality@gmail.com</span>
+										</a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
+			</div>
 			<footer class="footer">
 				<div class="container">
 					<div class="d-flex flex-wrap align-items-center justify-content-center py-5 footer__inner">
@@ -98,6 +142,18 @@
 						<path
 							fill="currentColor"
 							d="M6.81,13.39,9.3,19.61l3.24-3.23,5.55,4.41L22,3.21,2,11.54Zm9.48-5.14-6.13,5.59L9.4,16.71,8,13.19Z"
+						/>
+					</symbol>
+					<symbol id="phoneSvg" viewBox="0 0 24 24">
+						<path
+							fill="currentColor"
+							d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"
+						/>
+					</symbol>
+					<symbol id="mailSvg" viewBox="0 0 24 24">
+						<path
+							fill="currentColor"
+							d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"
 						/>
 					</symbol>
 				</defs>
