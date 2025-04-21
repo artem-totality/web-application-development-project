@@ -118,6 +118,46 @@
 }
 //---  products end ---//
 
+//---  movie start ---//
+.movie {
+	&__text {
+		@include text;
+	}
+	&__img img {
+		max-width: 100%;
+	}
+}
+
+.connect {
+	background-color: $main-color;
+	color: $inverted-color;
+	&__talk {
+		font-size: 52px;
+		font-style: normal;
+		font-weight: 700;
+	}
+	&__text {
+		font-size: 20px;
+		font-style: normal;
+		font-weight: 400;
+	}
+	&__link {
+		font-size: 14px;
+		text-transform: uppercase;
+		font-weight: 600;
+		letter-spacing: 1px;
+		border: 2px solid $white;
+		border-radius: 2px;
+		@include transition;
+
+		&:hover {
+			background-color: $black;
+			border-color: $black;
+		}
+	}
+}
+//---  movie end ---//
+
 //---  contacts start ---//
 .contacts {
 	&__card {
