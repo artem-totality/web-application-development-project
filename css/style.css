@@ -124,6 +124,48 @@ img {
   background-color: #32aa27;
 }
 
+.products {
+  background-color: rgb(245, 245, 245);
+}
+
+.item__inner {
+  height: 100%;
+  background-color: #ffffff;
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 20px 0px;
+  cursor: pointer;
+}
+.item__img img {
+  max-width: 100%;
+}
+.item__caption {
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 600;
+}
+.item__caption svg {
+  width: 10px;
+  height: 17px;
+  vertical-align: -6%;
+}
+.item__description {
+  color: #595959;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+}
+.item__inner:hover {
+  margin: -8px;
+}
+.item__inner:hover .item__caption {
+  color: #32aa27;
+}
+.item__inner:hover span {
+  margin-right: 12px !important;
+}
+.item * {
+  transition: 300ms all ease-in-out;
+}
+
 .contacts__card {
   border: 2px solid #32aa27;
   background-color: rgb(245, 245, 245);
