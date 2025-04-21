@@ -1,0 +1,15 @@
+{
+	"name": "web-application-development-project",
+	"version": "1.0.0",
+	"description": "Web Application Development Project",
+	"main": "index.js",
+	"scripts": {
+		"run": "echo Start",
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"author": "Artem Vasylevytskyi",
+	"license": "ISC",
+	"dependencies": {
+		"express": "^5.1.0"
+	}
+}
