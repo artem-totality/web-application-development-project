@@ -4,7 +4,7 @@
 	"description": "Web Application Development Project",
 	"main": "index.js",
 	"scripts": {
-		"run": "echo Start",
+		"start": "node server.js",
 		"test": "echo \"Error: no test specified\" && exit 1"
 	},
 	"author": "Artem Vasylevytskyi",
