@@ -1,11 +1,18 @@
 const express = require('express');
+const path = require('path');
 const { initApi } = require('./api/api');
 const { initPages } = require('./pages/pages');
 
-const mysql = require('mysql2');
+// const mysql = require('mysql2');
 
 const app = express();
 const PORT = 3000;
+
+// Set EJS as the template engine
+app.set('view engine', 'ejs');
+
+// Set the views directory
+app.set('views', path.join(__dirname, 'views'));
 
 initApi(app);
 
