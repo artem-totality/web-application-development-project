@@ -3,8 +3,6 @@ const path = require('path');
 const { initApi } = require('./api/api');
 const { initPages } = require('./pages/pages');
 
-// const mysql = require('mysql2');
-
 const app = express();
 const PORT = 3000;
 
@@ -12,7 +10,7 @@ const PORT = 3000;
 app.set('view engine', 'ejs');
 
 // Set the views directory
-app.set('views', path.join(__dirname, 'views'));
+app.set('views', path.join(__dirname, 'static'));
 
 initApi(app);
 
