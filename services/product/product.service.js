@@ -5,8 +5,9 @@ class Product {
 		this.#productRepository = productRepository;
 	}
 
-	getAll() {
-		return 'All';
+	async getAll() {
+		const [rows, fields] = await this.#productRepository.getAll();
+		return rows;
 	}
 
 	async getById(id) {

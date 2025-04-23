@@ -10,7 +10,7 @@ const PORT = 3000;
 app.set('view engine', 'ejs');
 
 // Set the views directory
-app.set('views', path.join(__dirname, 'static'));
+app.set('views', path.join(__dirname, 'views'));
 
 initApi(app);
 

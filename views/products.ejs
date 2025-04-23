@@ -52,8 +52,9 @@
 											<li class="nav-item">
 												<a class="nav-link" aria-current="page" href="/index">Home</a>
 											</li>
+
 											<li class="nav-item">
-												<a class="nav-link" href="/products">Products</a>
+												<a class="nav-link active" href="/products">Products</a>
 											</li>
 											<li class="nav-item">
 												<a class="nav-link" href="/contacts">Contacts</a>
@@ -70,34 +71,67 @@
 				</div>
 			</header>
 			<div class="flex-grow-1 content">
-				<section class="movie">
+				<section class="py-4 products">
 					<div class="container">
-						<div class="py-5 movie__inner">
-							<div class="row">
-								<div class="mx-md-auto col-12 col-md-8 p-4 movie__container">
-									<div class="py-3 subtitle"><%= product.title %></div>
-									<div class="py-2 mb-2 movie__text"><%= product.full_description %></div>
-									<div class="py-5 movie__img">
-										<img src="<%= product.cover %>" alt="The Godfather" />
-									</div>
+						<div class="py-5 products__inner">
+							<div class="py-1 subtitle">Featured movies</div>
+							<div class="h2 py-3 about__title">Discover the latest must-watch films</div>
+							<div class="py-2 product-box">
+								<% products.forEach(function(product) { %>
+								<div class="row">
+									<a class="col-12 col-md-4 p-3 item" href="/products/<%= product.p1.id %>">
+										<div class="item__inner">
+											<div class="item__img">
+												<img src="<%= product.p1.cover %>" alt="<%= product.p1.title %>" />
+											</div>
+											<div class="p-3 item__bottom">
+												<div class="py-2 item__caption">
+													<span class="me-1"><%= product.p1.title %></span>
+													<svg>
+														<use href="#rightShevron" />
+													</svg>
+												</div>
+												<div class="py-2 mb-3 item__description"><%= product.p1.short_description %></div>
+											</div>
+										</div>
+									</a>
+									<% if (product.p2) { %>
+									<a class="col-12 col-md-4 p-3 item" href="/products/<%= product.p2.id %>">
+										<div class="item__inner">
+											<div class="item__img">
+												<img src="<%= product.p2.cover %>" alt="<%= product.p2.title %>" />
+											</div>
+											<div class="p-3 item__bottom">
+												<div class="py-2 item__caption">
+													<span class="me-1"><%= product.p2.title %></span>
+													<svg>
+														<use href="#rightShevron" />
+													</svg>
+												</div>
+												<div class="py-2 mb-3 item__description"><%= product.p2.short_description %></div>
+											</div>
+										</div>
+									</a>
+									<% } %> <% if (product.p3) { %>
+									<a class="col-12 col-md-4 p-3 item" href="/products/<%= product.p3.id %>">
+										<div class="item__inner">
+											<div class="item__img">
+												<img src="<%= product.p3.cover %>" alt="<%= product.p3.title %>" />
+											</div>
+											<div class="p-3 item__bottom">
+												<div class="py-2 item__caption">
+													<span class="me-1"><%= product.p3.title %></span>
+													<svg>
+														<use href="#rightShevron" />
+													</svg>
+												</div>
+												<div class="py-2 mb-3 item__description"><%= product.p3.short_description %></div>
+											</div>
+										</div>
+									</a>
+									<% } %>
 								</div>
-							</div>
-						</div>
-					</div>
-				</section>
-				<section class="connect">
-					<div class="container">
-						<div class="py-4 connect__inner">
-							<div class="row">
-								<div class="ms-md-auto col-12 col-md-5 p-3 movie__container">
-									<div class="connect__talk">Let's talk</div>
-									<div class="connect__text">We would love to hear from you!</div>
-								</div>
-								<div
-									class="me-md-auto col-12 col-md-3 d-flex align-items-center justify-content-center movie__container"
-								>
-									<a class="py-2 px-3 connect__link" href="/contacts">Get in touch</a>
-								</div>
+								<% }); %>
 							</div>
 						</div>
 					</div>
@@ -131,6 +165,12 @@
 							fill="currentColor"
 							d="M6.81,13.39,9.3,19.61l3.24-3.23,5.55,4.41L22,3.21,2,11.54Zm9.48-5.14-6.13,5.59L9.4,16.71,8,13.19Z"
 						/>
+					</symbol>
+					<symbol id="rightShevron" viewBox="0 0 10 17">
+						<path
+							fill="currentColor"
+							d="M1.25111 16.0843c-.320261 0-.640343-.1222-.88465-.3663-.488613-.4886-.488613-1.2807 0-1.7693l5.90679-5.90664L.36646 2.13545c-.488613-.48844-.488613-1.28069 0-1.769124.488434-.488435 1.28069-.488435 1.76912 0L8.92684 7.15759c.48844.48843.48844 1.28068 0 1.7693L2.13558 15.7181c-.24412.244-.56421.3662-.88447.3662Z"
+						></path>
 					</symbol>
 				</defs>
 			</svg>

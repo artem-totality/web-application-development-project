@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Movie's Abundance</title>
+		<link rel="icon" href="/images/film.ico" />
+		<link rel="icon" type="image/png" sizes="16x16" href="/images/film-16x16.png" />
+		<link rel="icon" type="image/png" sizes="32x32" href="/images/film-32x32.png" />
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+			rel="stylesheet"
+		/>
+		<link
+			href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css"
+			rel="stylesheet"
+			integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7"
+			crossorigin="anonymous"
+		/>
+		<script
+			src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"
+			integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq"
+			crossorigin="anonymous"
+		></script>
+		<link rel="stylesheet" href="/css/normalize.css" />
+		<link rel="stylesheet" href="/css/style.css" />
+	</head>
+	<body>
+		<div class="d-flex flex-column app-wrapper">
+			<header class="header">
+				<div class="container">
+					<div class="py-4 header__inner">
+						<div class="header__top">
+							<nav class="navbar navbar-expand-lg bg-body-tertiary">
+								<div class="container-fluid">
+									<a class="navbar-brand text-uppercase" href="/index">Movie's Abundance</a>
+									<button
+										class="navbar-toggler"
+										type="button"
+										data-bs-toggle="collapse"
+										data-bs-target="#navbarSupportedContent"
+										aria-controls="navbarSupportedContent"
+										aria-expanded="false"
+										aria-label="Toggle navigation"
+									>
+										<span class="navbar-toggler-icon"></span>
+									</button>
+									<div class="collapse navbar-collapse flex-grow-0" id="navbarSupportedContent">
+										<ul class="navbar-nav me-auto mb-2 mb-lg-0">
+											<li class="nav-item">
+												<a class="nav-link" aria-current="page" href="/index">Home</a>
+											</li>
+											<li class="nav-item">
+												<a class="nav-link" href="/products">Products</a>
+											</li>
+											<li class="nav-item">
+												<a class="nav-link" href="/contacts">Contacts</a>
+											</li>
+											<li class="nav-item">
+												<a class="nav-link" href="/about">About</a>
+											</li>
+										</ul>
+									</div>
+								</div>
+							</nav>
+						</div>
+					</div>
+				</div>
+			</header>
+			<div class="flex-grow-1 content">
+				<section class="movie">
+					<div class="container">
+						<div class="py-5 movie__inner">
+							<div class="row">
+								<div class="mx-md-auto col-12 col-md-8 p-4 movie__container">
+									<div class="py-3 subtitle"><%= product.title %></div>
+									<div class="py-2 mb-2 movie__text"><%= product.full_description %></div>
+									<div class="py-5 movie__img">
+										<img src="<%= product.cover %>" alt="<%= product.title %>" />
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
+				<section class="connect">
+					<div class="container">
+						<div class="py-4 connect__inner">
+							<div class="row">
+								<div class="ms-md-auto col-12 col-md-5 p-3 movie__container">
+									<div class="connect__talk">Let's talk</div>
+									<div class="connect__text">We would love to hear from you!</div>
+								</div>
+								<div
+									class="me-md-auto col-12 col-md-3 d-flex align-items-center justify-content-center movie__container"
+								>
+									<a class="py-2 px-3 connect__link" href="/contacts">Get in touch</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
+			</div>
+			<footer class="footer">
+				<div class="container">
+					<div class="d-flex flex-wrap align-items-center justify-content-center py-5 footer__inner">
+						<div class="footer-info">
+							<div class="d-flex align-items-center copyrits">
+								<div class="me-1 copyrits__text">©&nbsp;2025&nbsp;created by</div>
+								<div class="copyrights__link">
+									<a href="https://t.me/totality7" target="_blank">
+										<span>@totality</span>
+										<svg>
+											<use href="#telegramSvg" />
+										</svg>
+									</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</footer>
+		</div>
+		<div class="svg-sprite">
+			<svg>
+				<defs>
+					<symbol id="telegramSvg" viewBox="0 0 24 24">
+						<path
+							fill="currentColor"
+							d="M6.81,13.39,9.3,19.61l3.24-3.23,5.55,4.41L22,3.21,2,11.54Zm9.48-5.14-6.13,5.59L9.4,16.71,8,13.19Z"
+						/>
+					</symbol>
+				</defs>
+			</svg>
+		</div>
+	</body>
+</html>
