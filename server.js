@@ -6,13 +6,13 @@ const mysql = require('mysql2');
 
 const app = express();
 const PORT = 3000;
-global.__basedir = __dirname;
 
 initApi(app);
 
 initPages(app);
 
-app.use(express.static('static', { index: 'index.html' }));
+app.use(express.static('static', { index: 'index.html', extensions: ['html'] }));
+
 // //Create a connection to the MySQL database
 // const connection = mysql.createConnection({
 // 	host: 'localhost',
@@ -36,7 +36,7 @@ app.use(express.static('static', { index: 'index.html' }));
 // 	});
 // });
 
-// // Connect to the database
+// Connect to the database
 // connection.connect((err) => {
 // 	if (err) {
 // 		console.error('Error connecting to database: ', err);
