@@ -13,6 +13,11 @@
 
 .nav-link {
 	font-weight: 500;
+	svg {
+		display: none;
+		width: 20px;
+		height: 20px;
+	}
 }
 
 .footer {
