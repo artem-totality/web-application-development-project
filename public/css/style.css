@@ -161,7 +161,7 @@ img {
   font-weight: 400;
 }
 .item__inner:hover {
-  margin: -8px;
+  transform: scale(1.05, 1.05);
 }
 .item__inner:hover .item__caption {
   color: #32aa27;
