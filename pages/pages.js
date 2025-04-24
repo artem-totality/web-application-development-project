@@ -10,6 +10,17 @@ const initPages = (app) => {
 
 	app.use('/', pagesRouter);
 
+	pagesRouter.get(PagesPath.ROOT, (_req, res) => {
+		productService
+			.getThreeRandom()
+			.then((products) => {
+				const prepearedProducts = productsPrepearing(products, { productCoverPath: PRODUCT_COVER_PATH });
+
+				res.render('index', { products: prepearedProducts });
+			})
+			.catch(console.log);
+	});
+
 	pagesRouter.get(PagesPath.PRODUCTS, (_req, res) => {
 		productService
 			.getAll()
