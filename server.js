@@ -16,7 +16,7 @@ initApi(app);
 
 initPages(app);
 
-app.use(express.static('static', { index: 'index.html', extensions: ['html'] }));
+app.use(express.static('public', { index: 'index.html', extensions: ['html'] }));
 
 // //Create a connection to the MySQL database
 // const connection = mysql.createConnection({
