@@ -160,6 +160,27 @@ img {
   font-style: normal;
   font-weight: 400;
 }
+.item__price {
+  font-size: 42px;
+  font-style: normal;
+  font-weight: 700;
+  position: relative;
+}
+.item__price::before {
+  content: "€";
+  position: absolute;
+  left: -22px;
+  top: 4px;
+  font-size: 26px;
+  font-weight: 400;
+}
+.item__price::after {
+  content: "00";
+  position: absolute;
+  right: -26px;
+  top: 6px;
+  font-size: 20px;
+}
 .item__inner:hover {
   transform: scale(1.05, 1.05);
 }

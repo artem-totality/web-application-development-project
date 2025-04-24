@@ -80,52 +80,61 @@
 								<% products.forEach(function(product) { %>
 								<div class="row">
 									<a class="col-12 col-md-4 p-3 item" href="/products/<%= product.p1.id %>">
-										<div class="item__inner">
+										<div class="d-flex flex-column item__inner">
 											<div class="item__img">
 												<img src="<%= product.p1.cover %>" alt="<%= product.p1.title %>" />
 											</div>
-											<div class="p-3 item__bottom">
+											<div class="d-flex flex-column flex-grow-1 p-3 item__bottom">
 												<div class="py-2 item__caption">
 													<span class="me-1"><%= product.p1.title %></span>
 													<svg>
 														<use href="#rightShevron" />
 													</svg>
 												</div>
-												<div class="py-2 mb-3 item__description"><%= product.p1.short_description %></div>
+												<div class="py-2 flex-grow-1 item__description"><%= product.p1.short_description %></div>
+												<div class="ps-4 itemp__price-wrapper">
+													<span class="item__price"><%= product.p1.cost %></span>
+												</div>
 											</div>
 										</div>
 									</a>
 									<% if (product.p2) { %>
 									<a class="col-12 col-md-4 p-3 item" href="/products/<%= product.p2.id %>">
-										<div class="item__inner">
+										<div class="d-flex flex-column item__inner">
 											<div class="item__img">
 												<img src="<%= product.p2.cover %>" alt="<%= product.p2.title %>" />
 											</div>
-											<div class="p-3 item__bottom">
+											<div class="d-flex flex-column flex-grow-1 p-3 item__bottom">
 												<div class="py-2 item__caption">
 													<span class="me-1"><%= product.p2.title %></span>
 													<svg>
 														<use href="#rightShevron" />
 													</svg>
 												</div>
-												<div class="py-2 mb-3 item__description"><%= product.p2.short_description %></div>
+												<div class="py-2 flex-grow-1 item__description"><%= product.p2.short_description %></div>
+												<div class="ps-4 itemp__price-wrapper">
+													<span class="item__price"><%= product.p2.cost %></span>
+												</div>
 											</div>
 										</div>
 									</a>
 									<% } %> <% if (product.p3) { %>
 									<a class="col-12 col-md-4 p-3 item" href="/products/<%= product.p3.id %>">
-										<div class="item__inner">
+										<div class="d-flex flex-column item__inner">
 											<div class="item__img">
 												<img src="<%= product.p3.cover %>" alt="<%= product.p3.title %>" />
 											</div>
-											<div class="p-3 item__bottom">
+											<div class="d-flex flex-column flex-grow-1 p-3 item__bottom">
 												<div class="py-2 item__caption">
 													<span class="me-1"><%= product.p3.title %></span>
 													<svg>
 														<use href="#rightShevron" />
 													</svg>
 												</div>
-												<div class="py-2 mb-3 item__description"><%= product.p3.short_description %></div>
+												<div class="py-2 flex-grow-1 item__description"><%= product.p3.short_description %></div>
+												<div class="ps-4 itemp__price-wrapper">
+													<span class="item__price"><%= product.p3.cost %></span>
+												</div>
 											</div>
 										</div>
 									</a>
