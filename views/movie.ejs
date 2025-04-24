@@ -74,11 +74,19 @@
 					<div class="container">
 						<div class="py-5 movie__inner">
 							<div class="row">
-								<div class="mx-md-auto col-12 col-md-8 p-4 movie__container">
+								<div class="mx-md-auto col-12 col-md-8 p-4 pb-0 movie__container">
 									<div class="py-3 subtitle"><%= product.title %></div>
 									<div class="py-2 mb-2 movie__text"><%= product.full_description %></div>
-									<div class="py-5 movie__img">
+									<div class="pt-5 movie__img">
 										<img src="<%= product.cover %>" alt="<%= product.title %>" />
+									</div>
+								</div>
+								<div class="row">
+									<div class="ms-md-auto col-12 col-md-5 p-4 text-end movie__price-wrapper">
+										<span class="ms-4 movie__price"><%= product.cost %></span>
+									</div>
+									<div class="me-md-auto col-12 col-md-3 d-flex align-items-center justify-content-center movie__cart">
+										<a class="py-2 px-3 movie__link" href="#">Add to cart</a>
 									</div>
 								</div>
 							</div>

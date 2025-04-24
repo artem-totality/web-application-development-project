@@ -1,3 +1,4 @@
+@charset "UTF-8";
 :root {
   --bs-body-font-family: Poppins, sans-serif;
 }
@@ -123,6 +124,11 @@ img {
   font-weight: 600;
   text-transform: uppercase;
   background-color: #32aa27;
+  letter-spacing: 1px;
+  transition: 300ms all ease-in-out;
+}
+.promo__button:hover {
+  background-color: #26801d;
 }
 
 .products {
@@ -175,6 +181,39 @@ img {
 }
 .movie__img img {
   max-width: 100%;
+}
+.movie__price {
+  font-size: 52px;
+  font-style: normal;
+  font-weight: 700;
+  position: relative;
+}
+.movie__price::before {
+  content: "€";
+  position: absolute;
+  left: -27px;
+  top: 5px;
+  font-size: 32px;
+  font-weight: 400;
+}
+.movie__price::after {
+  content: "00";
+  position: absolute;
+  right: -30px;
+  top: 9px;
+  font-size: 24px;
+}
+.movie__link {
+  color: #ffffff;
+  background-color: #32aa27;
+  font-size: 14px;
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 1px;
+  transition: 300ms all ease-in-out;
+}
+.movie__link:hover {
+  background-color: #26801d;
 }
 
 .connect {

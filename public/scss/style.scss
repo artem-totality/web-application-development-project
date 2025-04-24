@@ -71,6 +71,11 @@
 		font-weight: 600;
 		text-transform: uppercase;
 		background-color: $main-color;
+		letter-spacing: 1px;
+		@include transition;
+		&:hover {
+			background-color: $shady-main-color;
+		}
 	}
 }
 //---  index end ---//
@@ -126,6 +131,39 @@
 	}
 	&__img img {
 		max-width: 100%;
+	}
+	&__price {
+		font-size: 52px;
+		font-style: normal;
+		font-weight: 700;
+		position: relative;
+		&::before {
+			content: '\20AC';
+			position: absolute;
+			left: -27px;
+			top: 5px;
+			font-size: 32px;
+			font-weight: 400;
+		}
+		&::after {
+			content: '00';
+			position: absolute;
+			right: -30px;
+			top: 9px;
+			font-size: 24px;
+		}
+	}
+	&__link {
+		color: $inverted-color;
+		background-color: $main-color;
+		font-size: 14px;
+		text-transform: uppercase;
+		font-weight: 600;
+		letter-spacing: 1px;
+		@include transition;
+		&:hover {
+			background-color: $shady-main-color;
+		}
 	}
 }
 
