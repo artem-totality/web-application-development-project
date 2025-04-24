@@ -29,47 +29,7 @@
 	</head>
 	<body>
 		<div class="d-flex flex-column app-wrapper">
-			<header class="header">
-				<div class="container">
-					<div class="py-4 header__inner">
-						<div class="header__top">
-							<nav class="navbar navbar-expand-lg bg-body-tertiary">
-								<div class="container-fluid">
-									<a class="navbar-brand text-uppercase" href="./index">Movie's Abundance</a>
-									<button
-										class="navbar-toggler"
-										type="button"
-										data-bs-toggle="collapse"
-										data-bs-target="#navbarSupportedContent"
-										aria-controls="navbarSupportedContent"
-										aria-expanded="false"
-										aria-label="Toggle navigation"
-									>
-										<span class="navbar-toggler-icon"></span>
-									</button>
-									<div class="collapse navbar-collapse flex-grow-0" id="navbarSupportedContent">
-										<ul class="navbar-nav me-auto mb-2 mb-lg-0">
-											<li class="nav-item">
-												<a class="nav-link" aria-current="page" href="./index">Home</a>
-											</li>
-
-											<li class="nav-item">
-												<a class="nav-link" href="./products">Products</a>
-											</li>
-											<li class="nav-item">
-												<a class="nav-link active" href="./contacts">Contacts</a>
-											</li>
-											<li class="nav-item">
-												<a class="nav-link" href="./about">About</a>
-											</li>
-										</ul>
-									</div>
-								</div>
-							</nav>
-						</div>
-					</div>
-				</div>
-			</header>
+			<%- include('./partials/header'); %>
 			<div class="flex-grow-1 content">
 				<section class="contacts">
 					<div class="container">
@@ -98,6 +58,17 @@
 													<span>+38-050-08-24-350</span>
 												</a>
 												<br />
+												<a
+													href="https://www.codewars.com/users/artem-totality"
+													class="mb-3 contacts__link"
+													target="_blank"
+												>
+													<svg>
+														<use href="#codewarsSvg" />
+													</svg>
+													<span>artem-totality</span>
+												</a>
+												<br />
 												<a href="https://t.me/totality7" class="mb-3 contacts__link" target="_blank">
 													<svg>
 														<use href="#telegramSvg" />
@@ -120,49 +91,8 @@
 					</div>
 				</section>
 			</div>
-			<footer class="footer">
-				<div class="container">
-					<div class="d-flex flex-wrap align-items-center justify-content-center py-5 footer__inner">
-						<div class="footer-info">
-							<div class="d-flex align-items-center copyrits">
-								<div class="me-1 copyrits__text">©&nbsp;2025&nbsp;created by</div>
-								<div class="copyrights__link">
-									<a href="https://t.me/totality7" target="_blank">
-										<span>@totality</span>
-										<svg>
-											<use href="#telegramSvg" />
-										</svg>
-									</a>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</footer>
+			<%- include('./partials/footer'); %>
 		</div>
-		<div class="svg-sprite">
-			<svg>
-				<defs>
-					<symbol id="telegramSvg" viewBox="0 0 24 24">
-						<path
-							fill="currentColor"
-							d="M6.81,13.39,9.3,19.61l3.24-3.23,5.55,4.41L22,3.21,2,11.54Zm9.48-5.14-6.13,5.59L9.4,16.71,8,13.19Z"
-						/>
-					</symbol>
-					<symbol id="phoneSvg" viewBox="0 0 24 24">
-						<path
-							fill="currentColor"
-							d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"
-						/>
-					</symbol>
-					<symbol id="mailSvg" viewBox="0 0 24 24">
-						<path
-							fill="currentColor"
-							d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"
-						/>
-					</symbol>
-				</defs>
-			</svg>
-		</div>
+		<%- include('./partials/svg'); %>
 	</body>
 </html>
