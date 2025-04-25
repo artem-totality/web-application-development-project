@@ -29,6 +29,10 @@ const initPages = (app) => {
 		res.render('contacts');
 	});
 
+	pagesRouter.get(PagesPath.ABOUT, (_req, res) => {
+		res.render('about');
+	});
+
 	pagesRouter.get(PagesPath.PRODUCTS, (_req, res) => {
 		productService
 			.getAll()
