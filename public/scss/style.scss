@@ -2,7 +2,7 @@
 @import 'global';
 
 .header {
-	border-bottom: 2px solid $main-color;
+	border-bottom: $border;
 }
 
 .navbar-brand {
@@ -21,7 +21,7 @@
 }
 
 .footer {
-	border-top: 2px solid $main-color;
+	border-top: $border;
 	color: $inverted-color;
 	background-color: black;
 	&__inner {
@@ -101,15 +101,7 @@
 		max-width: 100%;
 	}
 	&__caption {
-		font-size: 20px;
-		font-style: normal;
-		font-weight: 600;
-
-		svg {
-			width: 10px;
-			height: 17px;
-			vertical-align: -6%;
-		}
+		@include caption;
 	}
 	&__description {
 		@include text;
@@ -286,19 +278,11 @@
 		font-style: normal;
 		font-weight: 600;
 		span {
-			color: #ec6366;
+			color: $red;
 		}
 	}
 	&__button {
-		color: $inverted-color;
-		background-color: $main-color;
-		border: none;
-		font-weight: 600;
-		text-transform: uppercase;
-		@include transition;
-		&:hover {
-			background-color: $shady-main-color;
-		}
+		@include button;
 	}
 	&__link {
 		display: block;
@@ -331,3 +315,81 @@
 	}
 }
 //---  login end ---//
+
+//---  cart start ---//
+.cart {
+	&__left {
+		background-color: $background-color;
+	}
+}
+
+.cart-item {
+	&__inner {
+		background-color: $white;
+		box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 20px 0px;
+	}
+	&__title {
+		cursor: pointer;
+		@include caption;
+		* {
+			@include transition;
+		}
+		&:hover {
+			color: $main-color;
+			span {
+				margin-right: 8px !important;
+			}
+		}
+	}
+	&__img {
+		img {
+			width: 100%;
+		}
+	}
+	&__remove {
+		button {
+			border: none;
+			background-color: $white;
+			@include transition;
+			&:hover {
+				color: $red;
+			}
+		}
+		svg {
+			width: 24px;
+			height: 24px;
+		}
+	}
+}
+
+.summary {
+	&__content {
+		border-bottom: $border;
+	}
+	&__total {
+		font-size: 32px;
+		font-style: normal;
+		font-weight: 700;
+		position: relative;
+		&::before {
+			content: '\20AC';
+			position: absolute;
+			left: -14px;
+			top: 4px;
+			font-size: 18px;
+			font-weight: 400;
+		}
+		&::after {
+			content: '00';
+			position: absolute;
+			right: -22px;
+			top: 5px;
+			font-size: 16px;
+		}
+	}
+	&__link {
+		width: 100%;
+		@include button;
+	}
+}
+//---  cart end ---//

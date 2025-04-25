@@ -21,6 +21,10 @@ const initPages = (app) => {
 			.catch(console.log);
 	});
 
+	pagesRouter.get(PagesPath.CART, (_req, res) => {
+		res.render('cart');
+	});
+
 	pagesRouter.get(PagesPath.CONTACTS, (_req, res) => {
 		res.render('contacts');
 	});

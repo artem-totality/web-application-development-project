@@ -365,4 +365,85 @@ img {
 .login button {
   display: block;
   width: 100%;
+}
+
+.cart__left {
+  background-color: rgb(245, 245, 245);
+}
+
+.cart-item__inner {
+  background-color: #ffffff;
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 20px 0px;
+}
+.cart-item__title {
+  cursor: pointer;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 600;
+}
+.cart-item__title svg {
+  width: 10px;
+  height: 17px;
+  vertical-align: -6%;
+}
+.cart-item__title * {
+  transition: 300ms all ease-in-out;
+}
+.cart-item__title:hover {
+  color: #32aa27;
+}
+.cart-item__title:hover span {
+  margin-right: 8px !important;
+}
+.cart-item__img img {
+  width: 100%;
+}
+.cart-item__remove button {
+  border: none;
+  background-color: #ffffff;
+  transition: 300ms all ease-in-out;
+}
+.cart-item__remove button:hover {
+  color: #ec6366;
+}
+.cart-item__remove svg {
+  width: 24px;
+  height: 24px;
+}
+
+.summary__content {
+  border-bottom: 2px solid #32aa27;
+}
+.summary__total {
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 700;
+  position: relative;
+}
+.summary__total::before {
+  content: "€";
+  position: absolute;
+  left: -14px;
+  top: 4px;
+  font-size: 18px;
+  font-weight: 400;
+}
+.summary__total::after {
+  content: "00";
+  position: absolute;
+  right: -22px;
+  top: 5px;
+  font-size: 16px;
+}
+.summary__link {
+  width: 100%;
+  color: #ffffff;
+  background-color: #32aa27;
+  border: none;
+  font-weight: 600;
+  text-transform: uppercase;
+  transition: 300ms all ease-in-out;
+}
+.summary__link:hover {
+  background-color: #26801d;
 }/*# sourceMappingURL=style.css.map */
