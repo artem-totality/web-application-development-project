@@ -1,6 +1,7 @@
 const mysql = require('mysql2');
 
 const { Product } = require('./product/product.repository');
+const { User } = require('./user/user.repository');
 
 // Create the connection to database
 const connection = mysql.createConnection({
@@ -11,7 +12,9 @@ const connection = mysql.createConnection({
 });
 
 const product = new Product({ connection });
+const user = new User({ connection });
 
 module.exports = {
 	product,
+	user,
 };

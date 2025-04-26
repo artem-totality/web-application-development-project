@@ -58,6 +58,10 @@ const initApi = (app) => {
 			})
 			.catch(console.log);
 	});
+
+	pagesRouter.post(PagesPath.LOGIN, (req, res) => {
+		res.send(`<head><meta http-equiv="refresh" content="0;URL=/about" /></head>`);
+	});
 };
 
 exports.initApi = initApi;

@@ -37,11 +37,18 @@
 								<div class="mx-auto col-12 col-md-5 col-lg-4 login__content">
 									<div class="subtitle">Login</div>
 									<div class="h2 py-3 about__title">Say PALIANYTSIA ;)</div>
-									<form action="/" class="login__form" method="get">
+									<form action="/login" class="login__form" method="post">
 										<label for="email" class="mb-1 login__label">Name <span>*</span></label>
-										<input id="email" class="mb-3 p-2" type="email" placeholder="email@website.com" required />
+										<input
+											name="email"
+											id="email"
+											class="mb-3 p-2"
+											type="text"
+											placeholder="email@website.com"
+											required
+										/>
 										<label for="password" class="mb-1 login__label">Password <span>*</span></label>
-										<input id="password" class="mb-4 p-2" type="password" required />
+										<input name="password" id="password" class="mb-4 p-2" type="password" required />
 										<button class="py-3 mb-3 login__button" type="submit">Submit</button>
 										<a href="/" class="py-3 login__link">Home</a>
 									</form>
