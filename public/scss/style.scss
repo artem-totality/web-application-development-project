@@ -220,11 +220,9 @@
 	&__card {
 		background-color: $background-color;
 	}
-	&__title {
-		text-align: left;
-	}
-	&__info {
-		max-width: 480px;
+	&__gratitude {
+		max-width: 512px;
+		font-size: 18px;
 	}
 	&__link {
 		color: $grey;

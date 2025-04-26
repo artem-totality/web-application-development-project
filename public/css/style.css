@@ -272,11 +272,9 @@ img {
 .contacts__card {
   background-color: rgb(245, 245, 245);
 }
-.contacts__title {
-  text-align: left;
-}
-.contacts__info {
-  max-width: 480px;
+.contacts__gratitude {
+  max-width: 512px;
+  font-size: 18px;
 }
 .contacts__link {
   color: #595959;
