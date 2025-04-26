@@ -1,7 +1,6 @@
 const express = require('express');
 const path = require('path');
 const { initApi } = require('./api/api');
-const { initPages } = require('./pages/pages');
 
 const app = express();
 const PORT = 3000;
@@ -13,8 +12,6 @@ app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
 
 initApi(app);
-
-initPages(app);
 
 app.use(express.static('public', { index: 'index.html', extensions: ['html'] }));
 
