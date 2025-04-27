@@ -1,6 +1,8 @@
 const express = require('express');
 const bodyParser = require('body-parser');
+const cookieParser = require('cookie-parser');
 const path = require('path');
+const { authentication: authenticationMiddleware } = require('./middlewares/middlewares');
 const { initApi } = require('./api/api');
 const { ENV } = require('./common/enums/enums');
 
@@ -9,6 +11,8 @@ const app = express();
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
 app.use(bodyParser.urlencoded({ extended: false }));
+app.use(cookieParser());
+app.use(authenticationMiddleware);
 
 initApi(app);
 
