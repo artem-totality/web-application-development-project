@@ -403,7 +403,7 @@
 		}
 	}
 	&__remove {
-		button {
+		a {
 			border: none;
 			background-color: $white;
 			@include transition;

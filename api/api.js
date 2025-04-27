@@ -1,6 +1,6 @@
 const { Router } = require('express');
 const path = require('path');
-const { PagePath, PageCaption } = require('../common/enums/enums');
+const { PagePath, PageCaption, HttpCode } = require('../common/enums/enums');
 const { PRODUCT_COVER_PATH } = require('../common/constants/constants');
 const { product: productService, auth: authService, cart: cartService } = require('../services/services');
 const { productsPrepearing } = require('../helpers/helpers');
@@ -86,10 +86,10 @@ const initApi = (app) => {
 		cartService
 			.addProduct(userId, productId)
 			.then((_) => {
-				res.status(200).send('Success!!');
+				res.status(HttpCode.OK).render('redirect', { path: path.join(PagePath.PRODUCTS, productId) });
 			})
 			.catch((_err) => {
-				res.status(400).render('redirect', { path: PagePath.PRODUCTS });
+				res.status(HttpCode.BAD_REQUEST).render('redirect', { path: PagePath.PRODUCTS });
 			});
 	});
 
@@ -102,10 +102,10 @@ const initApi = (app) => {
 		cartService
 			.delete(id, userId)
 			.then((_) => {
-				res.status(200).render('redirect', { path: PagePath.CART });
+				res.status(HttpCode.OK).render('redirect', { path: PagePath.CART });
 			})
 			.catch((_err) => {
-				res.status(400).render('redirect', { path: PagePath.PRODUCTS });
+				res.status(HttpCode.BAD_REQUEST).render('redirect', { path: PagePath.PRODUCTS });
 			});
 	});
 
@@ -121,6 +121,7 @@ const initApi = (app) => {
 					},
 					caption: PageCaption.NO_ACTIVE,
 					user: req.user,
+					addProductLink: path.join(PagePath.PRODUCTS_ADD, String(product.id)),
 				});
 			})
 			.catch(console.log);
@@ -132,10 +133,10 @@ const initApi = (app) => {
 			.signIn({ email, password })
 			.then((token) => {
 				res.cookie('token', token, { httpOnly: true });
-				res.status(200).render('redirect', { path: PagePath.PRODUCTS });
+				res.status(HttpCode.OK).render('redirect', { path: PagePath.PRODUCTS });
 			})
 			.catch(() => {
-				res.status(401).render('login');
+				res.status(HttpCode.UNAUTHORIZED).render('login');
 			});
 	});
 
@@ -145,10 +146,10 @@ const initApi = (app) => {
 				path: '/',
 				httpOnly: true,
 			});
-			res.status(200).render('redirect', { path: PagePath.ROOT });
+			res.status(HttpCode.OK).render('redirect', { path: PagePath.ROOT });
 		} catch (err) {
 			console.log(err);
-			res.status(400).render('redirect', { path: PagePath.ROOT });
+			res.status(HttpCode.BAD_REQUEST).render('redirect', { path: PagePath.ROOT });
 		}
 	});
 };

@@ -1,4 +1,4 @@
-const { PagePath } = require('../../common/enums/enums');
+const { PagePath, HttpCode } = require('../../common/enums/enums');
 
 const checkAuth = () => (req, res, next) => {
 	const { user } = req;
@@ -6,7 +6,7 @@ const checkAuth = () => (req, res, next) => {
 	if (user) {
 		next();
 	} else {
-		res.status(401).render('redirect', { path: PagePath.LOGIN });
+		res.status(HttpCode.UNAUTHORIZED).render('redirect', { path: PagePath.LOGIN });
 	}
 };
 

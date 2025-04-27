@@ -455,12 +455,12 @@ img {
 .cart-item__img img {
   width: 100%;
 }
-.cart-item__remove button {
+.cart-item__remove a {
   border: none;
   background-color: #ffffff;
   transition: 300ms all ease-in-out;
 }
-.cart-item__remove button:hover {
+.cart-item__remove a:hover {
   color: #ec6366;
 }
 .cart-item__remove svg {
