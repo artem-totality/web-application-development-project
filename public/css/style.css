@@ -77,6 +77,54 @@ img {
   height: 20px;
 }
 
+.nav-user {
+  position: relative;
+}
+.nav-user svg {
+  color: #26801d;
+}
+.nav-user::after {
+  content: "";
+  display: block;
+  position: absolute;
+  bottom: 5px;
+  width: 20px;
+  border-bottom: 2px solid #32aa27;
+  border-color: #26801d;
+}
+.nav-user::before {
+  content: "Log out";
+  display: block;
+  position: absolute;
+  left: 7px;
+  bottom: -18px;
+  text-wrap: nowrap;
+  height: 1px;
+  overflow: hidden;
+  transition: 300ms all ease-in-out;
+}
+.nav-user:hover::before {
+  height: 24px;
+}
+
+.nav-no-user {
+  position: relative;
+}
+.nav-no-user::before {
+  content: "Log in";
+  display: block;
+  position: absolute;
+  left: 7px;
+  bottom: -18px;
+  text-wrap: nowrap;
+  height: 1px;
+  overflow: hidden;
+  transition: 300ms all ease-in-out;
+}
+.nav-no-user:hover::before {
+  height: 24px;
+}
+
 .footer {
   border-top: 2px solid #32aa27;
   color: #ffffff;

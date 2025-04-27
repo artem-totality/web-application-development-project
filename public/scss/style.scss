@@ -14,9 +14,56 @@
 .nav-link {
 	font-weight: 500;
 	svg {
-		// display: none;
 		width: 20px;
 		height: 20px;
+	}
+}
+
+.nav-user {
+	position: relative;
+	svg {
+		color: $shady-main-color;
+	}
+	&::after {
+		content: '';
+		display: block;
+		position: absolute;
+		bottom: 5px;
+		width: 20px;
+		border-bottom: $border;
+		border-color: $shady-main-color;
+	}
+	&::before {
+		content: 'Log out';
+		display: block;
+		position: absolute;
+		left: 7px;
+		bottom: -18px;
+		text-wrap: nowrap;
+		height: 1px;
+		overflow: hidden;
+		@include transition;
+	}
+	&:hover::before {
+		height: 24px;
+	}
+}
+
+.nav-no-user {
+	position: relative;
+	&::before {
+		content: 'Log in';
+		display: block;
+		position: absolute;
+		left: 7px;
+		bottom: -18px;
+		text-wrap: nowrap;
+		height: 1px;
+		overflow: hidden;
+		@include transition;
+	}
+	&:hover::before {
+		height: 24px;
 	}
 }
 

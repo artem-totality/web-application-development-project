@@ -10,7 +10,7 @@ const initApi = (app) => {
 
 	app.use('/', pagesRouter);
 
-	pagesRouter.get(PagePath.ROOT, (_req, res) => {
+	pagesRouter.get(PagePath.ROOT, (req, res) => {
 		productService
 			.getThreeRandom()
 			.then((products) => {
@@ -25,25 +25,38 @@ const initApi = (app) => {
 			.catch(console.log);
 	});
 
-	pagesRouter.get(PagePath.CART, (_req, res) => {
-		res.render('cart', { caption: PageCaption.CART });
+	pagesRouter.get(PagePath.CART, (req, res) => {
+		res.render('cart', {
+			caption: PageCaption.CART,
+			user: req.user,
+		});
 	});
 
-	pagesRouter.get(PagePath.CONTACTS, (_req, res) => {
-		res.render('contacts', { caption: PageCaption.CONTACTS });
+	pagesRouter.get(PagePath.CONTACTS, (req, res) => {
+		res.render('contacts', {
+			caption: PageCaption.CONTACTS,
+			user: req.user,
+		});
 	});
 
-	pagesRouter.get(PagePath.ABOUT, (_req, res) => {
-		res.render('about', { caption: PageCaption.ABOUT });
+	pagesRouter.get(PagePath.ABOUT, (req, res) => {
+		res.render('about', {
+			caption: PageCaption.ABOUT,
+			user: req.user,
+		});
 	});
 
-	pagesRouter.get(PagePath.PRODUCTS, (_req, res) => {
+	pagesRouter.get(PagePath.PRODUCTS, (req, res) => {
 		productService
 			.getAll()
 			.then((products) => {
 				const prepearedProducts = productsPrepearing(products, { productCoverPath: PRODUCT_COVER_PATH });
 
-				res.render('products', { products: prepearedProducts, caption: PageCaption.PRODUCTS });
+				res.render('products', {
+					products: prepearedProducts,
+					caption: PageCaption.PRODUCTS,
+					user: req.user,
+				});
 			})
 			.catch(console.log);
 	});
@@ -59,6 +72,7 @@ const initApi = (app) => {
 						cover: path.join(PRODUCT_COVER_PATH, product.cover),
 					},
 					caption: PageCaption.NO_ACTIVE,
+					user: req.user,
 				});
 			})
 			.catch(console.log);

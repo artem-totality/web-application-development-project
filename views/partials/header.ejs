@@ -32,14 +32,14 @@
 									<a class="nav-link <%= caption == 'about' ? 'active' : '' %>" href="/about">About</a>
 								</li>
 								<li class="nav-item">
-									<a class="nav-link" href="/login">
+									<a class="nav-link <%= user ? 'active nav-user' : 'nav-no-user' %>" href="/login">
 										<svg>
 											<use href="#userSvg" />
 										</svg>
 									</a>
 								</li>
 								<li class="nav-item">
-									<a class="nav-link <%= caption == 'cart' ? 'active' : '' %>" href="/cart">
+									<a class="nav-link <%= user ? '' : 'd-none' %> <%= caption == 'cart' ? 'active' : '' %>" href="/cart">
 										<svg>
 											<use href="#cartSvg" />
 										</svg>
