@@ -19,17 +19,17 @@
 						<div class="collapse navbar-collapse flex-grow-0" id="navbarSupportedContent">
 							<ul class="navbar-nav me-auto mb-2 mb-lg-0">
 								<li class="nav-item">
-									<a class="nav-link active" aria-current="page" href="/">Home</a>
+									<a class="nav-link <%= caption == 'home' ? 'active' : '' %>" aria-current="page" href="/">Home</a>
 								</li>
 
 								<li class="nav-item">
-									<a class="nav-link" href="/products">Products</a>
+									<a class="nav-link <%= caption == 'products' ? 'active' : '' %>" href="/products">Products</a>
 								</li>
 								<li class="nav-item">
-									<a class="nav-link" href="/contacts">Contacts</a>
+									<a class="nav-link <%= caption == 'contacts' ? 'active' : '' %>" href="/contacts">Contacts</a>
 								</li>
 								<li class="nav-item">
-									<a class="nav-link" href="/about">About</a>
+									<a class="nav-link <%= caption == 'about' ? 'active' : '' %>" href="/about">About</a>
 								</li>
 								<li class="nav-item">
 									<a class="nav-link" href="/login">
@@ -39,7 +39,7 @@
 									</a>
 								</li>
 								<li class="nav-item">
-									<a class="nav-link" href="/cart">
+									<a class="nav-link <%= caption == 'cart' ? 'active' : '' %>" href="/cart">
 										<svg>
 											<use href="#cartSvg" />
 										</svg>

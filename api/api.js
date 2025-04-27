@@ -1,6 +1,6 @@
 const { Router } = require('express');
 const path = require('path');
-const { PagesPath } = require('../common/enums/enums');
+const { PagePath, PageCaption } = require('../common/enums/enums');
 const { PRODUCT_COVER_PATH } = require('../common/constants/constants');
 const { product: productService, auth: authService } = require('../services/services');
 const { productsPrepearing } = require('../helpers/helpers');
@@ -10,41 +10,45 @@ const initApi = (app) => {
 
 	app.use('/', pagesRouter);
 
-	pagesRouter.get(PagesPath.ROOT, (_req, res) => {
+	pagesRouter.get(PagePath.ROOT, (_req, res) => {
 		productService
 			.getThreeRandom()
 			.then((products) => {
 				const prepearedProducts = productsPrepearing(products, { productCoverPath: PRODUCT_COVER_PATH });
 
-				res.render('index', { products: prepearedProducts });
+				res.render('index', {
+					caption: PageCaption.HOME,
+					products: prepearedProducts,
+					user: req.user,
+				});
 			})
 			.catch(console.log);
 	});
 
-	pagesRouter.get(PagesPath.CART, (_req, res) => {
-		res.render('cart');
+	pagesRouter.get(PagePath.CART, (_req, res) => {
+		res.render('cart', { caption: PageCaption.CART });
 	});
 
-	pagesRouter.get(PagesPath.CONTACTS, (_req, res) => {
-		res.render('contacts');
+	pagesRouter.get(PagePath.CONTACTS, (_req, res) => {
+		res.render('contacts', { caption: PageCaption.CONTACTS });
 	});
 
-	pagesRouter.get(PagesPath.ABOUT, (_req, res) => {
-		res.render('about');
+	pagesRouter.get(PagePath.ABOUT, (_req, res) => {
+		res.render('about', { caption: PageCaption.ABOUT });
 	});
 
-	pagesRouter.get(PagesPath.PRODUCTS, (_req, res) => {
+	pagesRouter.get(PagePath.PRODUCTS, (_req, res) => {
 		productService
 			.getAll()
 			.then((products) => {
 				const prepearedProducts = productsPrepearing(products, { productCoverPath: PRODUCT_COVER_PATH });
 
-				res.render('products', { products: prepearedProducts });
+				res.render('products', { products: prepearedProducts, caption: PageCaption.PRODUCTS });
 			})
 			.catch(console.log);
 	});
 
-	pagesRouter.get(PagesPath.PRODUCTS_$ID, (req, res) => {
+	pagesRouter.get(PagePath.PRODUCTS_$ID, (req, res) => {
 		const { id } = req.params;
 		productService
 			.getById(id)
@@ -54,12 +58,13 @@ const initApi = (app) => {
 						...product,
 						cover: path.join(PRODUCT_COVER_PATH, product.cover),
 					},
+					caption: PageCaption.NO_ACTIVE,
 				});
 			})
 			.catch(console.log);
 	});
 
-	pagesRouter.post(PagesPath.LOGIN, (req, res) => {
+	pagesRouter.post(PagePath.LOGIN, (req, res) => {
 		const { email, password } = req.body;
 		authService
 			.signIn({ email, password })

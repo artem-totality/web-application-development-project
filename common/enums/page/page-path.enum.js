@@ -1,4 +1,4 @@
-const PagesPath = {
+const PagePath = {
 	ROOT: '/',
 	CONTACTS: '/contacts',
 	ABOUT: '/about',
@@ -8,4 +8,4 @@ const PagesPath = {
 	PRODUCTS_$ID: '/products/:id',
 };
 
-exports.PagesPath = PagesPath;
+exports.PagePath = PagePath;
