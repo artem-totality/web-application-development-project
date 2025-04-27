@@ -4,6 +4,7 @@ const { PagePath, PageCaption } = require('../common/enums/enums');
 const { PRODUCT_COVER_PATH } = require('../common/constants/constants');
 const { product: productService, auth: authService } = require('../services/services');
 const { productsPrepearing } = require('../helpers/helpers');
+const { checkAuth: checkAuthMiddleware } = require('../middlewares/middlewares');
 
 const initApi = (app) => {
 	const pagesRouter = Router();
@@ -25,7 +26,7 @@ const initApi = (app) => {
 			.catch(console.log);
 	});
 
-	pagesRouter.get(PagePath.CART, (req, res) => {
+	pagesRouter.get(PagePath.CART, checkAuthMiddleware(), (req, res) => {
 		res.render('cart', {
 			caption: PageCaption.CART,
 			user: req.user,
