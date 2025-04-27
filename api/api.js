@@ -43,6 +43,7 @@ const initApi = (app) => {
 						deleteProductLink: path.join(PagePath.PRODUCTS_DELETE, String(product.cartId)),
 					})),
 					totalCost: cart.reduce((acc, product) => acc + product.cost, 0),
+					proceedLink: PagePath.PRODUCTS_CLEAR_CART,
 				});
 			})
 			.catch(console.log);
@@ -75,6 +76,21 @@ const initApi = (app) => {
 				});
 			})
 			.catch(console.log);
+	});
+
+	pagesRouter.get(PagePath.PRODUCTS_CLEAR_CART, checkAuthMiddleware(), (req, res) => {
+		const {
+			user: { userId },
+		} = req;
+
+		cartService
+			.clearCart(userId)
+			.then((_) => {
+				res.status(HttpCode.OK).render('redirect-success', { delay: 2, message: 'Proceeded!', path: PagePath.CART });
+			})
+			.catch((_err) => {
+				res.status(HttpCode.BAD_REQUEST).render('redirect', { path: PagePath.PRODUCTS });
+			});
 	});
 
 	pagesRouter.get(PagePath.PRODUCTS_ADD_$ID, checkAuthMiddleware(), (req, res) => {

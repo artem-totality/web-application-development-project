@@ -27,6 +27,10 @@ class Cart {
 	delete(id, userId) {
 		return this.#connection.promise().query(`DELETE FROM cart WHERE id = ${id} AND userId = ${userId};`);
 	}
+
+	clearCart(userId) {
+		return this.#connection.promise().query(`DELETE FROM cart WHERE userId = ${userId};`);
+	}
 }
 
 exports.Cart = Cart;

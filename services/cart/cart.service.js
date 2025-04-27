@@ -16,6 +16,10 @@ class Cart {
 	async delete(id, userId) {
 		return this.#cartRepository.delete(id, userId);
 	}
+
+	async clearCart(userId) {
+		return this.#cartRepository.clearCart(userId);
+	}
 }
 
 exports.Cart = Cart;
