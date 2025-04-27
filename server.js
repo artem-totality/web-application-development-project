@@ -17,6 +17,9 @@ app.use(authenticationMiddleware());
 initApi(app);
 
 app.use(express.static('public', { index: 'index.html', extensions: ['html'] }));
+app.get('/{*splat}', (_req, res) => {
+	return res.render('redirect', { path: '/' });
+});
 
 app.listen(ENV.APP.SERVER_PORT, (error) => {
 	if (!error) {
