@@ -37,7 +37,11 @@ const initApi = (app) => {
 				res.render('cart', {
 					caption: PageCaption.CART,
 					user: req.user,
-					cart: cart.map((product) => ({ ...product, cover: path.join(PRODUCT_COVER_PATH, product.cover) })),
+					cart: cart.map((product) => ({
+						...product,
+						cover: path.join(PRODUCT_COVER_PATH, product.cover),
+						deleteProductLink: path.join(PagePath.PRODUCTS_DELETE, String(product.cartId)),
+					})),
 					totalCost: cart.reduce((acc, product) => acc + product.cost, 0),
 				});
 			})
@@ -71,6 +75,38 @@ const initApi = (app) => {
 				});
 			})
 			.catch(console.log);
+	});
+
+	pagesRouter.get(PagePath.PRODUCTS_ADD_$ID, checkAuthMiddleware(), (req, res) => {
+		const { id: productId } = req.params;
+		const {
+			user: { userId },
+		} = req;
+
+		cartService
+			.addProduct(userId, productId)
+			.then((_) => {
+				res.status(200).send('Success!!');
+			})
+			.catch((_err) => {
+				res.status(400).render('redirect', { path: PagePath.PRODUCTS });
+			});
+	});
+
+	pagesRouter.get(PagePath.PRODUCTS_DELETE_$ID, checkAuthMiddleware(), (req, res) => {
+		const { id } = req.params;
+		const {
+			user: { userId },
+		} = req;
+
+		cartService
+			.delete(id, userId)
+			.then((_) => {
+				res.status(200).render('redirect', { path: PagePath.CART });
+			})
+			.catch((_err) => {
+				res.status(400).render('redirect', { path: PagePath.PRODUCTS });
+			});
 	});
 
 	pagesRouter.get(PagePath.PRODUCTS_$ID, (req, res) => {

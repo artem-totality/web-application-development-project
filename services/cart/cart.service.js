@@ -1,15 +1,20 @@
 class Cart {
 	#cartRepository;
-	#productService;
 
 	constructor({ cartRepository }) {
 		this.#cartRepository = cartRepository;
 	}
 
-	async getAllByUserId(userId) {
-		const [cart, fields] = await this.#cartRepository.getAllByUserId(userId);
+	async addProduct(userId, productId) {
+		return this.#cartRepository.addProduct(userId, productId);
+	}
 
-		return cart;
+	async getAllByUserId(userId) {
+		return await this.#cartRepository.getAllByUserId(userId);
+	}
+
+	async delete(id, userId) {
+		return this.#cartRepository.delete(id, userId);
 	}
 }
 
