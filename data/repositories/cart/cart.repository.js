@@ -4,8 +4,12 @@ class Cart {
 		this.#connection = connection;
 	}
 
-	getById(id) {
-		return this.#connection.promise().query(`SELECT * FROM cart WHERE id = ${id};`);
+	getAllByUserId(userId) {
+		return this.#connection
+			.promise()
+			.query(
+				`SELECT * FROM G00473379.movies WHERE id in (SELECT movieId FROM G00473379.cart WHERE userId = ${userId});`
+			);
 	}
 }
 

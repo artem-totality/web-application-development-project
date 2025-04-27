@@ -2,7 +2,7 @@ const { Router } = require('express');
 const path = require('path');
 const { PagePath, PageCaption } = require('../common/enums/enums');
 const { PRODUCT_COVER_PATH } = require('../common/constants/constants');
-const { product: productService, auth: authService } = require('../services/services');
+const { product: productService, auth: authService, cart: cartService } = require('../services/services');
 const { productsPrepearing } = require('../helpers/helpers');
 const { checkAuth: checkAuthMiddleware } = require('../middlewares/middlewares');
 
@@ -27,10 +27,21 @@ const initApi = (app) => {
 	});
 
 	pagesRouter.get(PagePath.CART, checkAuthMiddleware(), (req, res) => {
-		res.render('cart', {
-			caption: PageCaption.CART,
-			user: req.user,
-		});
+		const {
+			user: { userId },
+		} = req;
+
+		cartService
+			.getAllByUserId(userId)
+			.then((cart) => {
+				res.render('cart', {
+					caption: PageCaption.CART,
+					user: req.user,
+					cart: cart.map((product) => ({ ...product, cover: path.join(PRODUCT_COVER_PATH, product.cover) })),
+					totalCost: cart.reduce((acc, product) => acc + product.cost, 0),
+				});
+			})
+			.catch(console.log);
 	});
 
 	pagesRouter.get(PagePath.CONTACTS, (req, res) => {

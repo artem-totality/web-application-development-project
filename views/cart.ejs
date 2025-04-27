@@ -38,17 +38,23 @@
 								<div class="col-12 col-md-7 py-4 pb-5 mb-4 cart__left">
 									<div class="py-1 px-3 subtitle">Cart</div>
 									<div class="cart-list">
+										<% cart.forEach(function(product) { %>
 										<div class="p-3 cart-item">
 											<div class="cart-item__inner">
 												<div class="row align-items-center">
 													<div class="col-12 col-md-4 cart-item__img">
-														<img src="/images/products/godfather.jpeg" alt="The godfather" />
+														<img src="<%= product.cover %>" alt="<%= product.title %>" />
 													</div>
-													<div class="col-9 py-4 col-md-6 cart-item__title">
-														<span class="ms-3 ms-md-0 me-1">The godfather</span>
-														<svg>
-															<use href="#rightShevron" />
-														</svg>
+													<div class="col-9 py-4 col-md-6">
+														<a class="d-flex align-items-center cart-item__title" href="/products/<%= product.id %>">
+															<span class="ms-3 ms-md-0 me-1"><%= product.title %></span>
+															<svg>
+																<use href="#rightShevron" />
+															</svg>
+														</a>
+														<div class="ms-3 ms-md-0 cart-item__price-wrapper">
+															<div class="d-inline mx-3 cart-item__price"><%= product.cost %></div>
+														</div>
 													</div>
 													<div class="col-3 col-md-2 text-center cart-item__remove">
 														<button>
@@ -60,50 +66,7 @@
 												</div>
 											</div>
 										</div>
-										<div class="p-3 cart-item">
-											<div class="cart-item__inner">
-												<div class="row align-items-center">
-													<div class="col-12 col-md-4 cart-item__img">
-														<img src="/images/products/inception.jpeg" alt="The inception" />
-													</div>
-													<div class="col-9 py-4 col-md-6 cart-item__title">
-														<span class="ms-3 ms-md-0 me-1">Inception</span>
-														<svg>
-															<use href="#rightShevron" />
-														</svg>
-													</div>
-													<div class="col-3 col-md-2 text-center cart-item__remove">
-														<button>
-															<svg>
-																<use href="#deleteSvg" />
-															</svg>
-														</button>
-													</div>
-												</div>
-											</div>
-										</div>
-										<div class="p-3 cart-item">
-											<div class="cart-item__inner">
-												<div class="row align-items-center">
-													<div class="col-12 col-md-4 cart-item__img">
-														<img src="/images/products/matrix.jpeg" alt="The matrix" />
-													</div>
-													<div class="col-9 py-4 col-md-6 cart-item__title">
-														<span class="ms-3 ms-md-0 me-1">The matrix</span>
-														<svg>
-															<use href="#rightShevron" />
-														</svg>
-													</div>
-													<div class="col-3 col-md-2 text-center cart-item__remove">
-														<button>
-															<svg>
-																<use href="#deleteSvg" />
-															</svg>
-														</button>
-													</div>
-												</div>
-											</div>
-										</div>
+										<% }); %>
 									</div>
 								</div>
 								<div class="col-12 col-md-5 py-4 cart__right">
@@ -111,7 +74,7 @@
 									<div class="px-3 summary">
 										<div class="d-flex justify-content-between pt-5 pb-3 mb-4 summary__content">
 											<div class="h2 summary__label">Total:</div>
-											<div class="h2 me-3 summary__total">42</div>
+											<div class="h2 me-3 summary__total"><%= totalCost %></div>
 										</div>
 										<a class="py-3 px-4 text-center summary__link" href="/">Continue</a>
 									</div>

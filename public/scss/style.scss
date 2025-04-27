@@ -378,8 +378,15 @@
 		box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 20px 0px;
 	}
 	&__title {
-		cursor: pointer;
 		@include caption;
+		overflow: hidden;
+		text-wrap: nowrap;
+		span {
+			display: block;
+			max-width: 90%;
+			text-overflow: ellipsis;
+			overflow: hidden;
+		}
 		* {
 			@include transition;
 		}
@@ -407,6 +414,27 @@
 		svg {
 			width: 24px;
 			height: 24px;
+		}
+	}
+	&__price {
+		font-size: 32px;
+		font-style: normal;
+		font-weight: 700;
+		position: relative;
+		&::before {
+			content: '\20AC';
+			position: absolute;
+			left: -14px;
+			top: 4px;
+			font-size: 18px;
+			font-weight: 400;
+		}
+		&::after {
+			content: '00';
+			position: absolute;
+			right: -22px;
+			top: 5px;
+			font-size: 16px;
 		}
 	}
 }

@@ -426,15 +426,22 @@ img {
   box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 20px 0px;
 }
 .cart-item__title {
-  cursor: pointer;
   font-size: 20px;
   font-style: normal;
   font-weight: 600;
+  overflow: hidden;
+  text-wrap: nowrap;
 }
 .cart-item__title svg {
   width: 10px;
   height: 17px;
   vertical-align: -6%;
+}
+.cart-item__title span {
+  display: block;
+  max-width: 90%;
+  text-overflow: ellipsis;
+  overflow: hidden;
 }
 .cart-item__title * {
   transition: 300ms all ease-in-out;
@@ -459,6 +466,27 @@ img {
 .cart-item__remove svg {
   width: 24px;
   height: 24px;
+}
+.cart-item__price {
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 700;
+  position: relative;
+}
+.cart-item__price::before {
+  content: "€";
+  position: absolute;
+  left: -14px;
+  top: 4px;
+  font-size: 18px;
+  font-weight: 400;
+}
+.cart-item__price::after {
+  content: "00";
+  position: absolute;
+  right: -22px;
+  top: 5px;
+  font-size: 16px;
 }
 
 .summary__content {
