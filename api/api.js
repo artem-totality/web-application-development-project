@@ -2,7 +2,7 @@ const { Router } = require('express');
 const path = require('path');
 const { PagesPath } = require('../common/enums/enums');
 const { PRODUCT_COVER_PATH } = require('../common/constants/constants');
-const { product: productService } = require('../services/services');
+const { product: productService, auth: authService } = require('../services/services');
 const { productsPrepearing } = require('../helpers/helpers');
 
 const initApi = (app) => {
@@ -60,7 +60,17 @@ const initApi = (app) => {
 	});
 
 	pagesRouter.post(PagesPath.LOGIN, (req, res) => {
-		res.send(`<head><meta http-equiv="refresh" content="0;URL=/about" /></head>`);
+		const { email, password } = req.body;
+		authService
+			.signIn({ email, password })
+			.then((token) => {
+				res.cookie('token', token, { httpOnly: true });
+				res.status(200).send('Success!');
+			})
+			.catch(() => {
+				// res.send(`<head><meta http-equiv="refresh" content="0;URL=/about" /></head>`);
+				res.send(`Error !`);
+			});
 	});
 };
 

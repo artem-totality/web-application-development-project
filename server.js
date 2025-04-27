@@ -2,9 +2,9 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const path = require('path');
 const { initApi } = require('./api/api');
+const { ENV } = require('./common/enums/enums');
 
 const app = express();
-const PORT = 3000;
 
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
@@ -14,9 +14,9 @@ initApi(app);
 
 app.use(express.static('public', { index: 'index.html', extensions: ['html'] }));
 
-app.listen(PORT, (error) => {
+app.listen(ENV.APP.SERVER_PORT, (error) => {
 	if (!error) {
-		console.log('Server is Successfully Running, and App is listening on port: ' + PORT);
+		console.log('Server is Successfully Running, and App is listening on port: ' + ENV.APP.SERVER_PORT);
 		return;
 	}
 
