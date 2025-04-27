@@ -370,6 +370,9 @@
 	&__left {
 		background-color: $background-color;
 	}
+	&__left {
+		min-height: 240px;
+	}
 }
 
 .cart-item {
@@ -377,6 +380,7 @@
 		background-color: $white;
 		box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 20px 0px;
 	}
+
 	&__title {
 		@include caption;
 		overflow: hidden;

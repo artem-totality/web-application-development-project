@@ -420,6 +420,9 @@ img {
 .cart__left {
   background-color: rgb(245, 245, 245);
 }
+.cart__left {
+  min-height: 240px;
+}
 
 .cart-item__inner {
   background-color: #ffffff;
