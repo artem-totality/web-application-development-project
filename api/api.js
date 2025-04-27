@@ -86,7 +86,9 @@ const initApi = (app) => {
 		cartService
 			.addProduct(userId, productId)
 			.then((_) => {
-				res.status(HttpCode.OK).render('redirect', { path: path.join(PagePath.PRODUCTS, productId) });
+				res
+					.status(HttpCode.OK)
+					.render('redirect-success', { delay: 2, message: 'Added!', path: path.join(PagePath.PRODUCTS, productId) });
 			})
 			.catch((_err) => {
 				res.status(HttpCode.BAD_REQUEST).render('redirect', { path: PagePath.PRODUCTS });
@@ -102,7 +104,7 @@ const initApi = (app) => {
 		cartService
 			.delete(id, userId)
 			.then((_) => {
-				res.status(HttpCode.OK).render('redirect', { path: PagePath.CART });
+				res.status(HttpCode.OK).render('redirect-success', { delay: 2, message: 'Removed!', path: PagePath.CART });
 			})
 			.catch((_err) => {
 				res.status(HttpCode.BAD_REQUEST).render('redirect', { path: PagePath.PRODUCTS });
