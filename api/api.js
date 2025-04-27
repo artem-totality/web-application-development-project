@@ -84,12 +84,24 @@ const initApi = (app) => {
 			.signIn({ email, password })
 			.then((token) => {
 				res.cookie('token', token, { httpOnly: true });
-				res.status(200).send('Success!');
+				res.status(200).render('redirect', { path: PagePath.PRODUCTS });
 			})
 			.catch(() => {
-				// res.send(`<head><meta http-equiv="refresh" content="0;URL=/about" /></head>`);
-				res.send(`Error !`);
+				res.status(401).render('login');
 			});
+	});
+
+	pagesRouter.get(PagePath.LOGOUT, (_req, res) => {
+		try {
+			res.clearCookie('token', {
+				path: '/',
+				httpOnly: true,
+			});
+			res.status(200).render('redirect', { path: PagePath.ROOT });
+		} catch (err) {
+			console.log(err);
+			res.status(400).render('redirect', { path: PagePath.ROOT });
+		}
 	});
 };
 

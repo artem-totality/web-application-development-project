@@ -358,6 +358,10 @@
 		display: block;
 		width: 100%;
 	}
+	&__wrong-credentials {
+		color: $red;
+		font-weight: 600;
+	}
 }
 //---  login end ---//
 

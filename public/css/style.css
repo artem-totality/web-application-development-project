@@ -412,6 +412,10 @@ img {
   display: block;
   width: 100%;
 }
+.login__wrong-credentials {
+  color: #ec6366;
+  font-weight: 600;
+}
 
 .cart__left {
   background-color: rgb(245, 245, 245);
