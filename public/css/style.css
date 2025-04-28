@@ -527,4 +527,11 @@ img {
 }
 .summary__link:hover {
   background-color: #26801d;
+}
+.summary__link--disabled {
+  background-color: #595959;
+  pointer-events: none;
+}
+.summary__link--disabled:hover {
+  background-color: #595959;
 }/*# sourceMappingURL=style.css.map */

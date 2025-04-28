@@ -76,7 +76,11 @@
 											<div class="h2 summary__label">Total:</div>
 											<div class="h2 me-3 summary__total"><%= totalCost %></div>
 										</div>
-										<a class="py-3 px-4 text-center summary__link" href="<%= proceedLink %>">Proceed</a>
+										<a
+											class="py-3 px-4 text-center summary__link <%= cart.length ? '' : 'summary__link--disabled' %>"
+											href="<%= proceedLink %>"
+											>Proceed</a
+										>
 									</div>
 								</div>
 							</div>

@@ -471,6 +471,13 @@
 	&__link {
 		width: 100%;
 		@include button;
+		&--disabled {
+			background-color: $grey;
+			pointer-events: none;
+			&:hover {
+				background-color: $grey;
+			}
+		}
 	}
 }
 //---  cart end ---//
