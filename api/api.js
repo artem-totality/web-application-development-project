@@ -102,9 +102,7 @@ const initApi = (app) => {
 		cartService
 			.addProduct(userId, productId)
 			.then((_) => {
-				res
-					.status(HttpCode.OK)
-					.render('redirect-success', { delay: 2, message: 'Added!', path: path.join(PagePath.PRODUCTS, productId) });
+				res.status(HttpCode.OK).render('redirect-success', { delay: 2, message: 'Added!', path: PagePath.PRODUCTS });
 			})
 			.catch((_err) => {
 				res.status(HttpCode.BAD_REQUEST).render('redirect', { path: PagePath.PRODUCTS });
