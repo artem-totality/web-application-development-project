@@ -9,19 +9,13 @@ class Cart {
 	}
 
 	async getAllByUserId(userId) {
-		const [productsId] = await this.#connection
+		const [cart] = await this.#connection
 			.promise()
-			.query(`SELECT id, movieId FROM cart WHERE userId = ${userId};`);
+			.query(
+				`SELECT c.id AS cartId, m.cover, m.cost, m.title, m.id FROM cart AS c JOIN movies AS m ON c.movieId=m.id WHERE c.userId=${userId};`
+			);
 
-		const [products] = await this.#connection
-			.promise()
-			.query(`SELECT * FROM movies WHERE id in (SELECT movieId FROM cart WHERE userId = ${userId});`);
-
-		return productsId.reduce((acc, { id: cartId, movieId }) => {
-			acc.push(...products.map((product) => ({ ...product, cartId })).filter(({ id }) => id === movieId));
-
-			return acc;
-		}, []);
+		return cart;
 	}
 
 	delete(id, userId) {
